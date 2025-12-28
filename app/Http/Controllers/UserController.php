@@ -13,6 +13,8 @@ class UserController extends Controller
             'name'=>'required|string|max:255',
             'email'=>'required|email|unique:users,email',
             'password'=>'required|string|confirmed',
+            'age'=>'nullable|integer|min:0',
+            'role'=>'nullable|in:admin,reader',
         ]);
 
         User::create($data);
@@ -36,11 +38,21 @@ class UserController extends Controller
 
     public function dashboard()
     {
-        if(Auth::check()){
-            return view('dashboard');
-        }
-        else{
-            return redirect('/login');
-        }
+        return view('dashboard');
+    }
+
+    public function logout()
+    {
+        Auth::logout();
+        return redirect(route('home'));
+    }
+
+    public function innerpage()
+    {
+       return view('innerpage');
+    }
+    public function reader()
+    {
+       return view('reader');
     }
 }

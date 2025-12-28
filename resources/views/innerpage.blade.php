@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Dashboard page</title>
+    <title>Innerpage</title>
     <style>
-        *{
+      *{
             margin: 0;
             padding: 20px 30px;
             box-sizing: border-box;
@@ -36,9 +36,9 @@
     </style>
 </head>
 <body>
-    <h1>Dashboard Page</h1>
-    <div>
-       <a href="{{ route('innerpage') }}"> <button class="inner-page-button">Go to inner page</button></a>
+    <h1>Welcome , {{Auth::user()->name}}</h1>
+     <div>
+       <a href="{{ route('dashboard') }}"> <button class="inner-page-button">Go back</button></a>
        <a href="{{ route('logout') }}"> <button class="logout-button">Logout</button></a>
     </div>
 </body>

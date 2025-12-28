@@ -322,7 +322,14 @@
                     </div>
                 </div>
                 
-                
+                <div class="form-group">
+                    <label for="role">
+                        <select name="role" id="role">
+                            <option value="admin">admin</option>
+                            <option value="reader">reader</option>
+                        </select>
+                    </label>
+                </div>
                 
                 
                 <button type="submit" class="btn">
